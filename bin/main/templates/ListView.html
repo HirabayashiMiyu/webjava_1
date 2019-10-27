@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelead.org">
+<head>
+<meta charset="UTF-8">
+<title>ShoppingApp</title>
+</head>
+<body>
+	<h1>商品一覧</h1>
+	<div>
+		<th:block th:each="item: ${items}">
+			<div>
+				<p class="name" th:text="${item.value.name}"></p>
+				<p class="name" th:text="${item.value.price}"></p>
+				<form>
+					<input type="button" value="カートに追加" id="btn">
+				</form>
+			</div>
+		</th:block>
+	</div>
+</body>
+</html>
