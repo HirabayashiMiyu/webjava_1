@@ -10,9 +10,10 @@
 		<th:block th:each="item: ${items}">
 			<div>
 				<p class="name" th:text="${item.value.name}"></p>
-				<p class="name" th:text="${item.value.price}"></p>
-				<form>
-					<input type="button" value="カートに追加" id="btn">
+				<span class="name" th:text="${item.value.price}"></span><span>円</span>
+				<form action="#" th:action="@{/cartview}" th:object="${itemid}" method="post" name="formName" id="formId">
+					<input type="submit" value="カートに追加" id="btn" name="btn">
+					<input type="hidden" th:value="${item.value.itemId}" name="itemId">
 				</form>
 			</div>
 		</th:block>

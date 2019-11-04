@@ -1,13 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymelead.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>カート</title>
 </head>
 <body>
-<h1>カート</h1>
-<div>
-    <p><input type="button" value="商品一覧へ" id="backbtn"></p>
-</div>
+	<h1>カート</h1>
+	<th:block th:each="item: ${list}">
+		<div>
+			<p th:text="${item.name}"></p>
+			<span th:text="${item.price}"></span><span>円</span>
+
+			<th:block th:each="num:${numMap}">
+				<div th:if="${num.key == item.itemId}">
+				<span>個数：</span>
+				<span th:text="${num.value}"></span>
+				</div>
+			</th:block>
+		</div>
+	</th:block>
+	<p>
+		<button type="button" onclick="history.back()" id="backbtn">商品一覧へ</button>
+	</p>
 </body>
 </html>
