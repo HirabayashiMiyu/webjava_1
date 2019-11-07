@@ -17,6 +17,9 @@
 				<span th:text="${num.value}"></span>
 				</div>
 			</th:block>
+			<form action="#" th:action="@{/cartview}" th:object="${itemid}" method="post" name="deleteForm" id="delete">
+			<button type="button" id="deletebtn">削除</button>
+			</form>
 		</div>
 	</th:block>
 	<p>

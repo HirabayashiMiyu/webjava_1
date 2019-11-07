@@ -7,8 +7,6 @@ import jp.co.systena.tigerscave.Shopping.application.order.Order;
 public class Cart {
   private List<Order> orderList = new ArrayList<Order>();
 
-
-
   public List<Order> getOrderList() {
     return orderList;
   }
@@ -16,7 +14,7 @@ public class Cart {
   public void addOrder(Order orderItem) {
     for (Order order : orderList) {
       if (order.getItemId() == orderItem.getItemId()) {
-        order.setNum(order.getNum()+1);
+        order.setNum(order.getNum() + 1);
         return;
       }
     }
@@ -26,5 +24,9 @@ public class Cart {
 
   public void setOrderList(List<Order> orderList) {
     this.orderList = orderList;
+  }
+
+  public void deleteOrder(int itemId) {
+//ここに何か書くと思う
   }
 }

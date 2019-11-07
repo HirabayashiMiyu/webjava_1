@@ -55,7 +55,7 @@ public class ShoppingController {
     Map<Integer, Item> map = listService.getItemList();
     Map<Integer, Integer> numMap = new HashMap<>();
     for (Order orderList : cart.getOrderList()) {
-      numMap.put(orderList.getItemId(),orderList.getNum());
+      numMap.put(orderList.getItemId(), orderList.getNum());
       Item item = map.get(orderList.getItemId());
       itemList.add(item);
     }
@@ -66,19 +66,4 @@ public class ShoppingController {
     return mav;
   }
 
-
-
-  // private ModelAndView order(ModelAndView mav, @Valid ListForm listForm, BindingResult
-  // bindingResult, HttpServletRequest request) {
-  //
-  // mav.addObject("items", map);
-  // // Viewのテンプレート名を設定
-  // mav.setViewName("CartView");
-  //
-  // return mav;
-  // }
-
-
 }
-
-

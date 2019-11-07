@@ -11,9 +11,12 @@
 			<div>
 				<p class="name" th:text="${item.value.name}"></p>
 				<span class="name" th:text="${item.value.price}"></span><span>円</span>
-				<form action="#" th:action="@{/cartview}" th:object="${itemid}" method="post" name="formName" id="formId">
+				<form action="#" th:action="@{/cartview}" th:object="${itemid}"
+					method="post" name="formName" id="formId">
+
+					<span>個数：</span>
+					<input type="number" min="1"> <input type="hidden" th:value="${item.value.itemId}" name="itemId">
 					<input type="submit" value="カートに追加" id="btn" name="btn">
-					<input type="hidden" th:value="${item.value.itemId}" name="itemId">
 				</form>
 			</div>
 		</th:block>
